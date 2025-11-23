@@ -1,0 +1,12 @@
+{
+  "routes": {
+    "/": {},
+    "/about": {},
+    "/achievements": {},
+    "/contact": {},
+    "/gallery": {},
+    "/pricing": {},
+    "/services": {},
+    "/transformations": {}
+  }
+}
