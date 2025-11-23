@@ -1,0 +1,17 @@
+<div class="flex {{ direction() === 'column' ? 'flex-col' : 'items-center' }} gap-4 {{ justifyClass() }}">
+  @if (buttons().length > 0) {
+    @for (btn of buttons(); track btn.label) {
+      <app-button
+        [type]="btn.type || 'button'"
+        [outlined]="btn.outlined || false"
+        [size]="btn.size"
+        [disabled]="btn.disabled"
+        [icon]="btn.icon"
+        [label]="btn.label"
+        (click)="btn.onClick?.()"
+      ></app-button>
+    }
+  } @else {
+    <ng-content></ng-content>
+  }
+</div>

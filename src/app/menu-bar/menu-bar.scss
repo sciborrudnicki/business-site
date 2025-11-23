@@ -1,0 +1,7 @@
+.p-menubar-item-link {
+  &.active {
+    border-radius: var(--p-border-radius-lg);
+    color: var(--p-button-primary-color);
+    background: var(--p-button-primary-background);
+  }
+}

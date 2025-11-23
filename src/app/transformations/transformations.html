@@ -1,0 +1,42 @@
+<ap-container [px]="6" [py]="20">
+  <!-- <h1 class="text-4xl font-bold text-center mb-12">Contact <span class="text-primary-500">Me</span></h1> -->
+  <!-- <h2 class="text-3xl font-bold text-center mb-8">Contact <span class="text-primary-500">Me</span></h2> -->
+  <ng-template containerTemplate="center">
+    <app-section-header
+      [title]="title()"
+      [icon]="icon()"
+      [description]="description()"
+    ></app-section-header>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <p-card *ngFor="let t of paginatedTransformations()" class="w-full" [style]="{ overflow: 'hidden' }">
+        <ng-template pTemplate="header">
+          <img [src]="t.photo" alt="{{ t.name }}" class="w-full" />
+          <!-- <img alt="Card" class="w-full" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" /> -->
+        </ng-template>
+        <div class="p-4">
+          <h3 class="text-xl font-bold">{{ t.name }}</h3>
+          <p class="text-surface-500 mb-2">{{ t.title }}</p>
+          <div class="flex flex-wrap gap-1 mb-2">
+            <p-tag *ngFor="let tag of t.tags" [value]="tag" severity="info"></p-tag>
+          </div>
+          <div *ngFor="let skill of t.skills" class="mb-3">
+            <div class="flex justify-between text-sm mb-1">
+              <span>{{ skill.name }}</span>
+              <span>{{ skill.before }}% → {{ skill.after }}%</span>
+            </div>
+            <p-progressBar [value]="skill.after" [showValue]="false" styleClass="mb-2"></p-progressBar>
+            <small class="text-surface-400">Before: {{ skill.before }}%</small>
+          </div>
+        </div>
+      </p-card>
+    </div>
+    <!-- Add paginator below the grid -->
+    <p-paginator
+      [rows]="rowsPerPage()"
+      [totalRecords]="totalRecords()"
+      [rowsPerPageOptions]="[3, 6, 9]"
+      (onPageChange)="onPageChange($event)"
+      styleClass="mt-4"
+    ></p-paginator>
+  </ng-template>
+</ap-container>

@@ -1,0 +1,12 @@
+:host {
+  &.container {
+    display: flex;
+  }
+
+  @media (width > 96rem) {
+    &.max-width-100 {
+      box-sizing: border-box;
+      max-width: 126rem;
+    }
+  }
+}

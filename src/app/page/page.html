@@ -1,0 +1,20 @@
+<!-- Menubar Slot -->
+<!-- <div class="flex-shrink-0" role="navigation">
+  <ng-content select="[slot=menubar]"></ng-content>
+</div> -->
+<!-- <app-menu-bar (bookingDialogOpened)="showBookingDialog = $event" slot="menubar"></app-menu-bar> -->
+
+
+<app-page-top role="navigation">
+  <ng-content select="[slot=top]"></ng-content>
+</app-page-top>
+
+<!-- Content Slot (flex-grow for full height) -->
+<app-page-center role="main">
+    <ng-content select="[slot=center]"></ng-content>
+</app-page-center>
+
+<!-- Bottom Slot -->
+<app-page-bottom role="contentinfo">
+  <ng-content select="[slot=bottom]"></ng-content>
+</app-page-bottom>

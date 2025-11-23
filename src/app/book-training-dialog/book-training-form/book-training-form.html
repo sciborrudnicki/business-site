@@ -1,0 +1,58 @@
+<ax-form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+  <ng-template formTemplate="body">
+
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+      <div class="p-field flex flex-col gap-2 mb-3">
+        <label for="name">Name *</label>
+        <input id="name" type="text" pInputText formControlName="name" />
+        <small *ngIf="bookingForm.get('name')?.invalid && bookingForm.get('name')?.touched" class="text-red-500">Name is required.</small>
+      </div>
+      <div class="p-field flex flex-col gap-2 mb-3">
+        <label for="email">Email *</label>
+        <input id="email" type="email" pInputText formControlName="email" />
+        <small *ngIf="bookingForm.get('email')?.invalid && bookingForm.get('email')?.touched" class="text-red-500">Valid email is required.</small>
+      </div>
+      <div class="p-field flex flex-col gap-2 mb-3">
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" pInputText formControlName="phone" />
+      </div>
+      <div class="p-field flex flex-col gap-2 mb-3">
+        <label for="company">Company/Organization</label>
+        <input id="company" type="text" pInputText formControlName="company" />
+      </div>
+      <div class="p-field flex flex-col gap-2 mb-3">
+        <label for="experienceLevel">Experience Level</label>
+        <p-multiselect [options]="experienceLevels" formControlName="experienceLevel" optionLabel="label" placeholder="Select Level" class="w-full md:w-80"></p-multiselect>
+      </div>
+      <div class="p-field flex flex-col gap-2 mb-3">
+        <label for="trainingType">Training Type *</label>
+        <p-multiselect [options]="trainingTypes" formControlName="trainingType" optionLabel="label" placeholder="Select Training Types" [maxSelectedLabels]="3" class="w-full md:w-80" />
+      </div>
+      <div class="p-field flex flex-col gap-2 mb-3">
+        <label for="preferredDate">Preferred Date Range *</label>
+        <p-datePicker class="max-w-full" size="small" [inline]="true" [showWeek]="true" selectionMode="range" id="preferredDate" formControlName="preferredDate"></p-datePicker>
+        <small *ngIf="bookingForm.get('preferredDate')?.invalid && bookingForm.get('preferredDate')?.touched" class="text-red-500">Date range is required.</small>
+      </div>
+      <div class="p-field flex flex-col gap-2 mb-3">
+        <label for="preferredTime">Preferred Time Slots</label>
+        <p-multiselect [options]="timeSlots" formControlName="preferredTime" optionLabel="label" placeholder="Select Time Slots" class="w-full md:w-80"></p-multiselect>
+      </div>
+      <div class="p-field flex flex-col gap-2 mb-3">
+        <label for="participants">Number of Participants</label>
+        <p-inputNumber formControlName="participants" [min]="1" [max]="50" placeholder="1"></p-inputNumber>
+      </div>
+      <div class="p-field flex flex-col gap-2 mb-3">
+        <label for="additionalNotes">Additional Notes</label>
+        <textarea id="additionalNotes" pInputTextarea formControlName="additionalNotes"></textarea>
+      </div>
+      <div class="p-field-checkbox mb-3">
+        <p-checkbox formControlName="acceptTerms"  [binary]="true"  inputId="acceptTerms"></p-checkbox>
+        <label for="acceptTerms" class="ml-2">I accept the <a href="/terms" target="_blank">Terms and Conditions</a> *</label>
+        <small *ngIf="bookingForm.get('acceptTerms')?.invalid && bookingForm.get('acceptTerms')?.touched" class="text-red-500 block">You must accept the terms.</small>
+      </div>
+    </form>
+  </ng-template>
+  <ng-template formTemplate="footer">
+    <button *ngIf="isBrowser" type="submit" pButton label="Book Now" [disabled]="bookingForm.invalid" [loading]="submitting"></button>
+  </ng-template>
+</ax-form>

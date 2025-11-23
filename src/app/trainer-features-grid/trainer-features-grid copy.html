@@ -1,0 +1,30 @@
+<app-hero>
+	<ng-template heroTemplate="leftBody">
+		<app-hero-header [title]="'Create websites'" [subtitle]="'visitors deserve to see'"></app-hero-header>
+
+		<p class="text-surface-0/90 lg:text-surface-700 dark:text-surface-200 text-xl leading-normal mb-8 max-w-xl lg:max-w-none">
+			Unlock the power of Angular with expert training and consulting. Build high-performance, scalable web applications that delight users and drive results. From beginners to advanced developers, I provide tailored sessions to elevate your skills and confidence.
+		</p>
+
+		<div class="flex items-center gap-4 justify-center lg:justify-start">
+			<button pButton type="button">
+				<span pButtonLabel>Learn More</span>
+			</button>
+			<button pButton type="button" outlined>
+				<span pButtonLabel>Live Demo</span>
+			</button>
+		</div>
+	</ng-template>
+
+	<ng-template heroTemplate="rightBody">
+		<div class="absolute lg:hidden inset-0 bg-surface-900/60 dark:bg-surface-900/80 z-10"></div>
+		<!--
+		src="https://fqjltiegiezfetthbags.supabase.co/storage/v1/render/image/public/block.images/blocks/hero/hero-1.png"
+		-->
+		<img
+				src="assets/business-desktop-with-office-elements.jpg"
+				alt="hero-1"
+				class="h-full w-full object-cover xl:[clip-path:polygon(12%_0,100%_0%,100%_100%,0_100%)]"
+		/>
+	</ng-template>	
+</app-hero>

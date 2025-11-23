@@ -1,0 +1,47 @@
+
+<div class="relative min-h-160 lg:min-h-0 bg-surface-0 dark:bg-surface-900 flex lg:flex-row flex-col">
+    <div class="flex lg:flex lg:flex-row flex-col justify-center md:justify-normal h-full flex-1">
+        <div class="relative flex-1 z-20 flex items-center">
+            <div class="flex items-center justify-center w-full h-full">
+                <div class="w-full max-w-6xl px-6 py-12 lg:p-12 xl:p-16 text-center lg:text-left">
+
+                  <app-section-header
+                    [title]="title()"
+                    [icon]="icon()"
+                    [description]="description()"
+                  ></app-section-header>
+
+                  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="max-w-xl">
+                    <div class="mb-4">
+                      <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                      <input pInputText id="name" formControlName="name" class="w-full" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                        <input pInputText id="email" formControlName="email" class="w-full" />
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                        <textarea pInputTextarea id="message" formControlName="message" rows="5" class="w-full"></textarea>
+                    </div>
+                    <button *ngIf="isBrowser" pButton type="submit" [icon]="'pi pi-send'" label="Send Message" class="w-full"></button>
+                  </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute lg:relative inset-0 lg:inset-auto flex-1">
+          <div class="absolute lg:hidden inset-0 bg-surface-900/60 dark:bg-surface-900/80 z-10"></div>
+          <!--
+          src="https://fqjltiegiezfetthbags.supabase.co/storage/v1/render/image/public/block.images/blocks/hero/hero-1.png"
+          -->
+          <!-- <img
+              src="assets/OIUGRK0.jpg"
+              alt="hero-1"
+              class="w-150 object-cover"
+          /> -->
+        </div>
+    </div>
+</div>
+

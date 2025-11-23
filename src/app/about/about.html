@@ -1,0 +1,32 @@
+  <ap-container [px]="6" [py]="20">
+
+    <ng-template containerTemplate="center">
+      <app-section-header
+        [title]="title()"
+        [icon]="icon()"
+        [description]="description()"
+      ></app-section-header>
+
+      <!-- About Me Card -->
+      <p-card class="mb-12">
+        <div class="flex items-center gap-8 max-w-4xl mx-auto">
+          <img src="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" alt="Angular Trainer" class="w-32 h-32 rounded-full object-cover" />
+          <div class="text-left">
+            <div class="mb-4">
+              <h3 class="text-2xl font-semibold">Angular Trainer & Consultant</h3>
+              <p class="text-surface-600">Specializing in Angular development and training</p>
+            </div>
+            <p class="text-surface-700 leading-relaxed">
+              As a certified Angular expert with over 10 years of experience, I offer comprehensive services to help developers and teams excel in Angular development. From hands-on workshops and code reviews to custom development and migration support, my goal is to empower you with the skills and knowledge to build robust, scalable applications.
+            </p>
+          </div>
+        </div>
+      </p-card>
+      
+      <app-education></app-education>
+
+      <app-experiences></app-experiences>
+
+      <app-skills></app-skills>
+    </ng-template>
+  </ap-container>

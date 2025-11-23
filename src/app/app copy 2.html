@@ -1,0 +1,62 @@
+<div class="business-card">
+  <!-- Header with Logo and Menu -->
+  <!-- <header class="header">
+    <div class="logo">
+      <img src="https://via.placeholder.com/100x50/007bff/ffffff?text=TrainerLogo" alt="Trainer Logo" />
+    </div>
+    <p-menubar [model]="menuItems" class="menu"></p-menubar>
+  </header> -->
+
+  <!-- Hero Section with Photo and Slogans -->
+  <!-- <section class="hero">
+    <div class="hero-content">
+      <img src="/assets/trainer-photo.jpg" alt="Trainer Photo" class="trainer-photo" />
+      <div class="hero-text">
+        <h1>Angular Trainer</h1>
+        <h2>Personal Trainer</h2>
+        <p class="slogan">Transform your skills with professional support!</p>
+        <p class="slogan">Performance, scalability, modernity – achieve your goals in Angular.</p>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Description Section -->
+  <!-- <section class="description">
+    <p-card class="description-card">
+      <h2>I offer personal training tailored to your needs</h2>
+      <p>I specialize in building muscle, weight loss, and improving fitness. Join my clients and see the results!</p>
+    </p-card>
+  </section> -->
+
+  <!-- Trainer Features Grid Component -->
+  <section class="features-grid">
+    <trainer-features-grid></trainer-features-grid>
+  </section>
+
+  <!-- Contact Form Section -->
+  <!-- <section class="contact">
+    <p-card class="contact-card">
+      <h2>Contact me</h2>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input pInputText id="name" [(ngModel)]="contactForm.name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input pInputText id="email" [(ngModel)]="contactForm.email" name="email" type="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea pInputTextarea id="message" [(ngModel)]="contactForm.message" name="message" rows="4" required></textarea>
+        </div>
+        <p-button type="submit" label="Send message" styleClass="p-button-success"></p-button>
+      </form>
+    </p-card>
+  </section> -->
+
+  <!-- Router Outlet for Subpages (not on main page initially) -->
+  <!-- <main *ngIf="isSubpage">
+    <router-outlet></router-outlet>
+  </main> -->
+</div>

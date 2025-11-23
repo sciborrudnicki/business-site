@@ -1,0 +1,42 @@
+<!-- Skills -->
+<div class="mt-12">
+  <app-section-header [title]="'Skills'" [icon]="'pi pi-crown'"></app-section-header>
+
+  <!-- Skills List -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+    @if (skillsService.getSkills().length > 0) {
+      @for (skill of skillsService.getSkills(); track skill.name) {
+        
+        <div class="p-6 bg-surface-50 dark:bg-surface-800 rounded-lg dark:border-surface-700">
+          <div class="flex items-start gap-4">
+            <i [class]="skill.icon" class="text-3xl text-primary-500 mt-1"></i>
+            <div class="flex-1">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold text-lg text-surface-900 dark:text-surface-0">{{ skill.name }}</span>
+                <span class="text-sm font-medium text-primary-600">{{ skill.value }}%</span>
+              </div>
+              <p-progressBar [value]="skill.value" [showValue]="false"></p-progressBar>
+              <p class="text-surface-600 dark:text-surface-300 leading-relaxed mt-3">{{ skill.description }}</p>
+            </div>
+          </div>
+        </div>
+       
+        <!-- 
+        <div class="grid lg:grid-cols-2 p-4 bg-surface-50 dark:bg-surface-800 rounded-lg">
+          <div class="flex">
+            <i [class]="skill.icon" class="text-xl text-primary-500"></i>
+          </div>
+          <div class="flex justify-between mb-2">
+            <span class="font-medium">{{ skill.name }}</span>
+            <span>{{ skill.value }}%</span>
+          </div>
+          <p-progressBar [value]="skill.value" [showValue]="false"></p-progressBar>
+        </div>
+         -->
+      } @empty {
+        <p class="text-center text-surface-500">No skills available.</p>
+      }
+    }
+  </div>
+</div>
+<!-- End Skills -->

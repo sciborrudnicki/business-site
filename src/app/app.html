@@ -1,0 +1,16 @@
+<app-page
+  (bookingDialogOpened)="showBookingDialog = $event"
+>
+  <!-- Page: Top -->
+  <app-menu-bar (bookingDialogOpened)="showBookingDialog = $event" slot="top"></app-menu-bar>
+
+  <!-- Page: Center -->
+  <ng-container slot="center"><router-outlet></router-outlet></ng-container>
+
+  <!-- Page: Bottom -->
+  <app-footer slot="bottom"></app-footer>
+</app-page>
+<!-- Dialog component -->
+<app-book-training-dialog
+  [(visible)]="showBookingDialog">
+</app-book-training-dialog>

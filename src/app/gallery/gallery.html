@@ -1,0 +1,58 @@
+<ap-container [px]="6" [py]="20" [direction]="'column'">
+  <ng-template containerTemplate="center">
+    <!-- <h1 class="text-4xl font-bold text-center mb-12">Contact <span class="text-primary-500">Me</span></h1> -->
+    <!-- <h2 class="text-3xl font-bold text-center mb-8">Contact <span class="text-primary-500">Me</span></h2> -->
+    <app-section-header
+      [title]="title()"
+      [icon]="icon()"
+      [description]="description()"
+    ></app-section-header>
+
+    <p-galleria 
+      [value]="images()" 
+      [responsiveOptions]="responsiveOptions" 
+      [containerStyle]="{ 'max-width': '850px' }" 
+      [circular]="true" 
+      [showItemNavigators]="true" 
+      [showThumbnails]="true"
+      [numVisible]="7"
+    >
+      <ng-template #item let-item>
+        <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+      </ng-template>
+      <ng-template #thumbnail let-item>
+          <img [src]="item.thumbnailImageSrc" />
+      </ng-template>
+      <ng-template #caption let-item>
+        <div class="text-center p-2">
+          <h4>{{ item.title }}</h4>
+          <p>{{ item.description }}</p>
+        </div>
+      </ng-template>
+    </p-galleria>
+
+  </ng-template>
+    
+
+</ap-container>
+
+
+
+<!-- 
+    <p-galleria 
+      [value]="images()" 
+      [visible]="displayCustom || false" 
+      [(activeIndex)]="activeIndex" 
+      [responsiveOptions]="responsiveOptions" 
+      [containerStyle]="{ 'max-width': '850px' }" 
+      [numVisible]="7" 
+      [circular]="true" 
+      [fullScreen]="true" 
+      [showItemNavigators]="true" 
+      [showThumbnails]="false"
+    >
+      <ng-template #item let-item>
+        <img [src]="item.itemImageSrc" style="width: 100%; display: block;" />
+      </ng-template>
+    </p-galleria>
+-->

@@ -1,0 +1,12 @@
+<form [formGroup]="messageMeForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
+    <div class="flex flex-col gap-1">
+        <textarea rows="5" cols="30" pTextarea formControlName="message" [invalid]="isInvalid('message')"></textarea>
+        @if (isInvalid('message')) {
+          <p-message severity="error" size="small" variant="simple">Message is required..</p-message>
+        }
+    </div>
+    <app-button [icon]="'pi pi-send'" [label]="'Send message'" severity="secondary" type="submit"></app-button>
+    
+    <!-- <button pButton [icon]="'pi pi-send'" severity="secondary" type="submit"><span pButtonLabel>Send message</span></button> -->
+   
+</form>

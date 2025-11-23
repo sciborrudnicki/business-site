@@ -1,0 +1,35 @@
+<ap-container [px]="6" [py]="20">
+  <ng-template containerTemplate="center">
+    <app-section-header
+      [title]="title()"
+      [icon]="icon()"
+      [description]="description()"
+    ></app-section-header>
+
+    <!-- Achievements -->
+    <ap-grid [columns]="1" [gap]="'4'" [items]="achievementsService.items">
+
+      <ng-template #itemTemplate let-item>
+        <div class="w-full rounded-md p-4 pl-0 flex items-start gap-4">
+          <span class="flex h-16 w-16 items-center justify-center rounded-lg bg-surface-0 shadow flex-shrink-0">
+            <i class="{{ item.icon }} text-2xl! text-primary-500"></i>
+          </span>
+          <div class="flex flex-col gap-1 flex-1">
+            <span class="font-bold text-surface-900 text-xl font-medium leading-tight">
+              {{ item.title }}
+            </span>
+            <p class="text-surface-500 leading-normal">
+              {{ item.description }}
+            </p>
+            <div class="mt-2 text-sm text-surface-400">
+              @for (tag of item.tags; track tag) {
+                <p-tag [value]="tag" severity="secondary" [class]="'mr-2'"></p-tag>
+              }
+            </div>
+          </div>
+        </div>
+      </ng-template>
+
+    </ap-grid>
+  </ng-template>
+</ap-container>

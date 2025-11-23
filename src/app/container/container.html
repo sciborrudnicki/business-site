@@ -1,0 +1,10 @@
+@if (centerTemplate) {
+  <ng-container *ngTemplateOutlet="centerTemplate"></ng-container>
+} @else if (leftTemplate && rightTemplate) {
+  <div class="flex-1"><ng-container *ngTemplateOutlet="leftTemplate"></ng-container></div>
+  <div class="flex-1"><ng-container *ngTemplateOutlet="rightTemplate"></ng-container></div>
+} @else if (leftTemplate && centerTemplate && rightTemplate) {
+  <div class="flex-1"><ng-container *ngTemplateOutlet="leftTemplate"></ng-container></div>
+  <div class="flex-1"><ng-container *ngTemplateOutlet="centerTemplate"></ng-container></div>
+  <div class="flex-1"><ng-container *ngTemplateOutlet="rightTemplate"></ng-container></div>
+}

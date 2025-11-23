@@ -1,0 +1,1 @@
+export { UiClassService } from './ui-class.service';

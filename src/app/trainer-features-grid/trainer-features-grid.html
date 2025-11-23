@@ -1,0 +1,23 @@
+<app-hero
+	[title]="'Create websites'"
+	[subtitle]="'visitors deserve to see'"
+	[description]="'Unlock the power of Angular with expert training and consulting. Build high-performance, scalable web applications that delight users and drive results. From beginners to advanced developers, I provide tailored sessions to elevate your skills and confidence.'"
+	[image]="'assets/business-desktop-with-office-elements.jpg'"
+></app-hero>
+
+<ap-container
+	[px]="0"
+	[pr]="4"
+	[py]="20"
+	[direction]="'row'"
+	[maxWidth]="'max-width-100'"
+>
+	<ng-template containerTemplate="left">
+		<img src="assets/flat-lay-computer-laptop-isolated-whtie-background.jpg" />
+	</ng-template>
+	<ng-template containerTemplate="right">
+		<app-business-description>
+			<app-message-me></app-message-me>
+		</app-business-description>
+	</ng-template>
+</ap-container>

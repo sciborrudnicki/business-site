@@ -1,0 +1,13 @@
+<!-- Graphics/icons -->
+<div class="flex flex-wrap gap-{{gap()}}">
+  @for (feature of featuresService.get(); track feature.name) {
+    <app-feature
+      [icon]="feature.icon"
+      [name]="feature.name"
+      [description]="feature.description ?? ''"
+
+      [iconClass]="'text-primary-500'"
+      [color]="'text-surface-700'"
+    ></app-feature>
+  }
+</div>

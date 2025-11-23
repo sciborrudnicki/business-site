@@ -1,0 +1,62 @@
+<!-- Footer -->
+<footer class="bg-surface-800 text-surface-0 py-8 px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-lg font-semibold mb-0">Angular Trainer</h3>
+        <p class="text-surface-400">Professional Angular training and consulting services.</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+    <!-- <a
+      [routerLink]="item.routerLink"
+      [routerLinkActive]="['active', 'shadow-lg', 'transition-shadow', 'duration-300']"
+      [routerLinkActiveOptions]="{exact: true}"
+      pRipple class="flex items-center p-menubar-item-link"
+    ><span>{{ item.label }}</span></a> -->
+
+        <ul class="space-y-2">
+          @for (item of menuBarService.items; track item.label) {
+            <li>
+              <a
+                [routerLink]="item.routerLink"
+                [routerLinkActive]="['!text-surface-0']"
+                [routerLinkActiveOptions]="{exact: true}"
+                class="hover:text-surface-100 text-surface-400"
+              >
+                {{ item.label }}
+              </a>
+            </li>
+          }
+          <!-- <li><a routerLink="/about" class="text-surface-400 hover:text-surface-0">About</a></li>
+          <li><a routerLink="/services" class="text-surface-400 hover:text-surface-0">Services</a></li>
+          <li><a routerLink="/achievements" class="text-surface-400 hover:text-surface-0">Achievements</a></li>
+          <li><a routerLink="/transformations" class="text-surface-400 hover:text-surface-0">Transformations</a></li>
+          <li><a routerLink="/gallery" class="text-surface-400 hover:text-surface-0">Gallery</a></li>
+          <li><a routerLink="/pricing" class="text-surface-400 hover:text-surface-0">Pricing</a></li>
+          <li><a routerLink="/contact" class="text-surface-400 hover:text-surface-0">Contact</a></li> -->
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Services</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-surface-400 hover:text-surface-0">Angular Workshops</a></li>
+          <li><a href="#" class="text-surface-400 hover:text-surface-0">Code Reviews</a></li>
+          <li><a href="#" class="text-surface-400 hover:text-surface-0">Consulting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Contact</h3>
+        <p class="text-surface-400">Email: sciborrudnicki@example.com</p>
+        <p class="text-surface-400">Phone: +1 (123) 456-7890</p>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://x.com/sciborrudnicki" class="text-surface-400 hover:text-surface-0"><i class="pi pi-twitter"></i></a>
+          <a href="https://linkedin.com/in/sciborrudnicki" class="text-surface-400 hover:text-surface-0"><i class="pi pi-linkedin"></i></a>
+          <a href="https://github.com/sciborrudnicki" class="text-surface-400 hover:text-surface-0"><i class="pi pi-github"></i></a>
+          <a href="https://pinterest.com/sciborrudnicki" class="text-surface-400 hover:text-surface-0"><i class="pi pi-pinterest"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-600 mt-8 pt-8 text-center">
+      <p class="text-surface-400">&copy; 2025 Angular Trainer. All rights reserved.</p>
+    </div>
+</footer>

@@ -1,0 +1,11 @@
+<p-dialog
+  [header]="header()"
+  [modal]="true"
+  [(visible)]="visible"
+  (onHide)="closeDialog()"
+  [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  [maximizable]="true"
+>
+  <!-- <ng-content></ng-content> -->
+  <app-book-training-form></app-book-training-form>
+</p-dialog>

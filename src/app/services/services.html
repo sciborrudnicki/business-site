@@ -1,0 +1,37 @@
+<!-- <div class="bg-surface-0 px-6 py-20">
+  <div class="flex flex-col gap-6">
+
+    <div class="flex flex-col gap-4">
+      <div class="font-bold text-3xl leading-tight">
+        <span class="text-surface-900">Angular Trainer </span>
+        <span class="text-primary-500">Services</span>
+      </div>
+      <div class="text-surface-500 leading-tight">
+        Transform your skills with professional Angular training tailored to your needs.
+      </div>
+    </div>
+
+    <ap-grid [items]="items"></ap-grid>
+</div> -->
+
+<ap-container [px]="6" [py]="20">
+  <ng-template containerTemplate="center">
+    <app-section-header
+      title="Services"
+      icon="pi pi-briefcase"
+      description="Explore the range of Angular services I offer to help you build, optimize, and scale your applications."
+    ></app-section-header>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div *ngFor="let item of items" class="bg-white dark:bg-surface-800 p-4 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-200">
+        <div class="flex items-center mb-4">
+          <i [class]="item.icon" class="text-2xl text-primary-500 mr-4"></i>
+          <h3 class="text-lg font-bold text-surface-900 dark:text-surface-0">{{ item.title }}</h3>
+        </div>
+        <p class="text-surface-500 dark:text-surface-400 mb-4">{{ item.description }}</p>
+        <div class="flex flex-wrap gap-1">
+          <p-tag *ngFor="let tag of item.tags" [value]="tag" severity="info"></p-tag>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ap-container>

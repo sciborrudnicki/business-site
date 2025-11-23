@@ -1,0 +1,77 @@
+<!-- <app-page [name]="title()">
+  <div class="flex flex-col gap-4">
+    <div class="font-bold text-3xl leading-tight">
+      <span class="text-surface-900">Angular Trainer </span>
+      <span class="text-primary-500">{{ title() }}</span>
+    </div>
+    <div class="text-surface-500 leading-tight">
+      {{ description() }}
+    </div>
+  </div>
+</app-page> -->
+
+<p-card header="Book Your Training Session" class="w-full max-w-md mx-auto">
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="space-y-4">
+    <div>
+      <label for="name" class="block text-sm font-medium">Name</label>
+      <input
+        pInputText
+        id="name"
+        formControlName="name"
+        placeholder="Your Name"
+        class="w-full"
+      />
+    </div>
+
+    <div>
+      <label for="email" class="block text-sm font-medium">Email</label>
+      <input
+        pInputText
+        id="email"
+        formControlName="email"
+        placeholder="your@email.com"
+        class="w-full"
+      />
+    </div>
+
+    <div>
+      <label for="trainingType" class="block text-sm font-medium">Training Type</label>
+      <!-- <p-dropdown
+        id="trainingType"
+        formControlName="trainingType"
+        [options]="trainingTypes"
+        placeholder="Select Training"
+        class="w-full"
+      ></p-dropdown> -->
+    </div>
+
+    <div>
+      <label for="preferredDate" class="block text-sm font-medium">Preferred Date</label>
+      <p-datepicker
+        id="preferredDate"
+        formControlName="preferredDate"
+        dateFormat="yy-mm-dd"
+        class="w-full"
+      ></p-datepicker>
+    </div>
+
+    <div>
+      <label for="message" class="block text-sm font-medium">Message (Optional)</label>
+      <textarea
+        pInputTextarea
+        id="message"
+        formControlName="message"
+        placeholder="Any specific requirements?"
+        rows="3"
+        class="w-full"
+      ></textarea>
+    </div>
+
+    <!-- <p-button
+      type="submit"
+      label="Book Now"
+      [disabled]="!bookingForm.valid"
+      styleClass="w-full"
+    ></p-button> -->
+  </form>
+</p-card>

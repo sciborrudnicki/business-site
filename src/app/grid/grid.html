@@ -1,0 +1,9 @@
+@if (items() && itemTemplate) {
+  @for (item of items(); track $index) {
+    <ng-container *ngTemplateOutlet="itemTemplate; context: { $implicit: item }"></ng-container>
+  }
+} @else {
+  @for (template of templates; track template) {
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+  }
+}

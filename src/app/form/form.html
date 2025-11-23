@@ -1,0 +1,24 @@
+<form
+  [formGroup]="formGroup()"
+  (ngSubmit)="onSubmit()" 
+  class="ax-form p-fluid"
+>
+  <!-- Header Slot -->
+   @if (headerTemplate) {
+    <!-- <header></header> -->
+    <ng-container *ngTemplateOutlet="headerTemplate"></ng-container>
+   }
+
+  <!-- Body Slot -->
+   @if (bodyTemplate) {
+    <ng-container *ngTemplateOutlet="bodyTemplate"></ng-container>
+   }
+  <!-- <div class="ax-form-body" *ngIf="bodyTemplate">
+  </div> -->
+
+  <!-- Footer Slot -->
+   @if (footerTemplate) {
+    <!-- <footer></footer> -->
+    <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
+   }
+</form>

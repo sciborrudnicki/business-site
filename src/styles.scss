@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+@use 'normalize.css';
+
+/* Tailwind CSS imports */
+@use "./tailwind.scss";
+
+/* PrimeNG imports */
+@use "primeicons/primeicons.css";
+@use "primeflex/primeflex.css";
+
+/* Your custom global styles */
+
+:root {
+  --body-bg: var(--p-surface-0);
+  --body-text-color: var(--p-surface-900);
+  --border-color: var(--p-surface-200);
+  --card-bg: var(--p-surface-0);
+  --card-border: 1px solid var(--border-color);
+  --font-family: "Inter", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  --overlay-background: #ffffff;
+  --text-color: var(--p-surface-700);
+}
+
+:root[class='p-dark'] {
+  --body-bg: var(--p-surface-950);
+  --body-text-color: var(--p-surface-50);
+  --card-border: 1px solid transparent;
+  --card-bg: var(--p-surface-900);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --text-color: var(--p-surface-0);
+  --overlay-background: var(--p-surface-900);
+}
+
+html {
+  font-size: 15px;
+  font-family: var(--font-family);
+}
+
+body {
+  // min-height: 100%;
+  // overflow-x: hidden;
+  // overflow-y: auto;
+  background-color: var(--body-bg);
+  color: var(--body-text-color);
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+// Custom.
+p-menubar {
+  &.p-menubar {
+    border: none;
+  }
+}
+
+// Grid as grid
+.grid {
+  display: grid !important;
+}
+
+// Generate bg-surface-X/Y classes for common shades and opacities
+// $shades: 0, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900;
+// $opacities: 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+
+// @each $shade in $shades {
+//   .bg-surface-#{$shade} {
+//     background-color: var(--p-surface-#{$shade});
+//   }
+//   // Full opacity text class (e.g., .text-surface-0)
+//   .text-surface-#{$shade} {
+//     color: var(--p-surface-#{$shade});
+//   }
+
+//   @each $opacity in $opacities {
+//     .bg-surface-#{$shade}\/#{$opacity} {
+//       background-color: rgba(var(--p-surface-#{$shade}), #{$opacity / 100});
+//     }
+
+//     // Opacity-modified text class (e.g., .text-surface-0/50)
+//     .text-surface-#{$shade}\/#{$opacity} {
+//       color: rgba(var(--p-surface-#{$shade}), #{$opacity / 100});
+//     }
+//   }
+// }

@@ -1,0 +1,22 @@
+<ap-container [py]="20">
+  <ng-template containerTemplate="center">
+    <app-section-header
+      title="Education"
+      icon="pi pi-graduation-cap"
+      size="small"
+    ></app-section-header>
+
+    <p-timeline [value]="educationService.getEducation()" class="w-full md:w-80 mb-12">
+      <ng-template #opposite let-event>
+        <small class="text-surface-500 dark:text-surface-400">{{ event.year }}</small>
+        <br/>
+        <small class="text-surface-500 dark:text-surface-400">{{ event.location }}</small>
+      </ng-template>
+      <ng-template #content let-event>
+        <span class="font-bold">{{ event.institution }}</span>
+        {{ event.degree }}
+        <p>{{ event.details }}</p>
+      </ng-template>
+    </p-timeline>
+  </ng-template>
+</ap-container>
