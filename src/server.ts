@@ -7,7 +7,7 @@ import {
 import express from 'express';
 import { join } from 'node:path';
 
-const browserDistFolder = join(import.meta.dirname, '../browser');
+const browserDistFolder = join(new URL('../browser', import.meta.url).pathname);
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
@@ -53,10 +53,10 @@ app.use((req, res, next) => {
  */
 if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
-  app.listen(port, (error) => {
-    if (error) {
-      throw error;
-    }
+  app.listen(port, () => {
+    // if (error) {
+    //   throw error;
+    // }
 
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
