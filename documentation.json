@@ -458,7 +458,22 @@
         },
         {
             "name": "UiPaddingBottom",
-            "id": "interface-UiPaddingBottom-5f0c1f06c46a36412ca15ba009743de2a196f86b081be46ed5cee5ced2299baffddeebd991507bef54f285ab938f7b38fce3c117a2164f9e6de81a286b038d1f",
+            "id": "interface-UiPaddingBottom-b48c052b01612057ebe9bc18cf6b23381253580e3f5dda4b50fc3f5c61a26088378070f1bf9daf53b82d991ca3f5b6e0a6d864a2e073a15ee2d33cf1333dad3a",
+            "file": "src/app/ui/spacing/interface/ui-spacing.type.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export type SpacingType = 'padding' | 'margin';\n\nexport type UiSpacing<\n  Type extends SpacingType,\n  X = string,\n  Y = string,\n  Left = string,\n  Right = string,\n  Top = string,\n  Bottom = string,\n> = {\n  [K in Type extends 'padding' ? `p${'x' | 'y' | 'l' | 'r' | 't' | 'b'}` : `m${'x' | 'y' | 'l' | 'r' | 't' | 'b'}`]?: \n    K extends `${any}x` ? X :\n    K extends `${any}y` ? Y :\n    K extends `${any}l` ? Left :\n    K extends `${any}r` ? Right :\n    K extends `${any}t` ? Top :\n    K extends `${any}b` ? Bottom :\n    never;\n};\n\nexport interface UiPaddingBottom<PB = string> extends Pick<UiSpacing<'padding', string, string, string, string, string, PB>, 'pb'> {}\n\n\nconst a: UiPaddingBottom = {\n  pb: '4',\n};\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "Pick"
+            ]
+        },
+        {
+            "name": "UiPaddingBottom",
+            "id": "interface-UiPaddingBottom-5f0c1f06c46a36412ca15ba009743de2a196f86b081be46ed5cee5ced2299baffddeebd991507bef54f285ab938f7b38fce3c117a2164f9e6de81a286b038d1f-1",
             "file": "src/app/ui/padding/interface/ui-padding-bottom.interface.ts",
             "deprecated": false,
             "deprecationMessage": "",
@@ -479,22 +494,7 @@
             "indexSignatures": [],
             "kind": 172,
             "methods": [],
-            "extends": []
-        },
-        {
-            "name": "UiPaddingBottom",
-            "id": "interface-UiPaddingBottom-b48c052b01612057ebe9bc18cf6b23381253580e3f5dda4b50fc3f5c61a26088378070f1bf9daf53b82d991ca3f5b6e0a6d864a2e073a15ee2d33cf1333dad3a-1",
-            "file": "src/app/ui/spacing/interface/ui-spacing.type.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export type SpacingType = 'padding' | 'margin';\n\nexport type UiSpacing<\n  Type extends SpacingType,\n  X = string,\n  Y = string,\n  Left = string,\n  Right = string,\n  Top = string,\n  Bottom = string,\n> = {\n  [K in Type extends 'padding' ? `p${'x' | 'y' | 'l' | 'r' | 't' | 'b'}` : `m${'x' | 'y' | 'l' | 'r' | 't' | 'b'}`]?: \n    K extends `${any}x` ? X :\n    K extends `${any}y` ? Y :\n    K extends `${any}l` ? Left :\n    K extends `${any}r` ? Right :\n    K extends `${any}t` ? Top :\n    K extends `${any}b` ? Bottom :\n    never;\n};\n\nexport interface UiPaddingBottom<PB = string> extends Pick<UiSpacing<'padding', string, string, string, string, string, PB>, 'pb'> {}\n\n\nconst a: UiPaddingBottom = {\n  pb: '4',\n};\n",
-            "properties": [],
-            "indexSignatures": [],
-            "methods": [],
-            "extends": [
-                "Pick"
-            ],
+            "extends": [],
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "UiPaddingBottom-1"
@@ -8032,7 +8032,7 @@
                 ]
             },
             "extends": [],
-            "templateData": "<ap-container [px]=\"6\" [py]=\"20\">\n  <!-- <h1 class=\"text-4xl font-bold text-center mb-12\">Contact <span class=\"text-primary-500\">Me</span></h1> -->\n  <!-- <h2 class=\"text-3xl font-bold text-center mb-8\">Contact <span class=\"text-primary-500\">Me</span></h2> -->\n  <ng-template containerTemplate=\"center\">\n    <app-section-header\n      [title]=\"title()\"\n      [icon]=\"icon()\"\n      [description]=\"description()\"\n    ></app-section-header>\n    <div class=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4\">\n      <p-card *ngFor=\"let t of paginatedTransformations()\" class=\"w-full\" [style]=\"{ overflow: 'hidden' }\">\n        <ng-template pTemplate=\"header\">\n          <img [src]=\"t.photo\" alt=\"{{ t.name }}\" class=\"w-full\" />\n          <!-- <img alt=\"Card\" class=\"w-full\" src=\"https://primefaces.org/cdn/primeng/images/card-ng.jpg\" /> -->\n        </ng-template>\n        <div class=\"p-4\">\n          <h3 class=\"text-xl font-bold\">{{ t.name }}</h3>\n          <p class=\"text-surface-500 mb-2\">{{ t.title }}</p>\n          <div class=\"flex flex-wrap gap-1 mb-2\">\n            <p-tag *ngFor=\"let tag of t.tags\" [value]=\"tag\" severity=\"info\"></p-tag>\n          </div>\n          <div *ngFor=\"let skill of t.skills\" class=\"mb-3\">\n            <div class=\"flex justify-between text-sm mb-1\">\n              <span>{{ skill.name }}</span>\n              <span>{{ skill.before }}% → {{ skill.after }}%</span>\n            </div>\n            <p-progressBar [value]=\"skill.after\" [showValue]=\"false\" styleClass=\"mb-2\"></p-progressBar>\n            <small class=\"text-surface-400\">Before: {{ skill.before }}%</small>\n          </div>\n        </div>\n      </p-card>\n    </div>\n    <!-- Add paginator below the grid -->\n    <p-paginator\n      [rows]=\"rowsPerPage()\"\n      [totalRecords]=\"totalRecords()\"\n      [rowsPerPageOptions]=\"[3, 6, 9]\"\n      (onPageChange)=\"onPageChange($event)\"\n      styleClass=\"mt-4\"\n    ></p-paginator>\n  </ng-template>\n</ap-container>\n"
+            "templateData": "<ap-container [px]=\"6\" [py]=\"20\">\n  <!-- <h1 class=\"text-4xl font-bold text-center mb-12\">Contact <span class=\"text-primary-500\">Me</span></h1> -->\n  <!-- <h2 class=\"text-3xl font-bold text-center mb-8\">Contact <span class=\"text-primary-500\">Me</span></h2> -->\n  <ng-template containerTemplate=\"center\">\n    <app-section-header\n      [title]=\"title()\"\n      [icon]=\"icon()\"\n      [description]=\"description()\"\n    />\n    <div class=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4\">\n      <p-card *ngFor=\"let t of paginatedTransformations()\" class=\"w-full\" [style]=\"{ overflow: 'hidden' }\">\n        <ng-template pTemplate=\"header\">\n          <img [src]=\"t.photo\" alt=\"{{ t.name }}\" class=\"w-full\" />\n          <!-- <img alt=\"Card\" class=\"w-full\" src=\"https://primefaces.org/cdn/primeng/images/card-ng.jpg\" /> -->\n        </ng-template>\n        <div class=\"p-4\">\n          <h3 class=\"text-xl font-bold\">{{ t.name }}</h3>\n          <p class=\"text-surface-500 mb-2\">{{ t.title }}</p>\n          <div class=\"flex flex-wrap gap-1 mb-2\">\n            <p-tag *ngFor=\"let tag of t.tags\" [value]=\"tag\" severity=\"info\"></p-tag>\n          </div>\n          <div *ngFor=\"let skill of t.skills\" class=\"mb-3\">\n            <div class=\"flex justify-between text-sm mb-1\">\n              <span>{{ skill.name }}</span>\n              <span>{{ skill.before }}% → {{ skill.after }}%</span>\n            </div>\n            <p-progressBar [value]=\"skill.after\" [showValue]=\"false\" styleClass=\"mb-2\"></p-progressBar>\n            <small class=\"text-surface-400\">Before: {{ skill.before }}%</small>\n          </div>\n        </div>\n      </p-card>\n    </div>\n    <!-- Add paginator below the grid -->\n    <p-paginator\n      [rows]=\"rowsPerPage()\"\n      [totalRecords]=\"totalRecords()\"\n      [rowsPerPageOptions]=\"[3, 6, 9]\"\n      (onPageChange)=\"onPageChange($event)\"\n      styleClass=\"mt-4\"\n    ></p-paginator>\n  </ng-template>\n</ap-container>\n"
         }
     ],
     "modules": [

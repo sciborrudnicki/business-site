@@ -6,7 +6,7 @@
       [title]="title()"
       [icon]="icon()"
       [description]="description()"
-    ></app-section-header>
+    />
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <p-card *ngFor="let t of paginatedTransformations()" class="w-full" [style]="{ overflow: 'hidden' }">
         <ng-template pTemplate="header">
